@@ -3,7 +3,7 @@
 
 ---
 
-## 1. 技术亮点（TL;DR）
+## 1. 技术亮点
 - **零公网 IP**：纯 Tailscale 内网穿透，跨城、跨校区即插即用  
 - **容器自愈**：raylet 僵尸 10 秒内自动重启，隔夜不断联  
 - **单命令上线**：Docker + shell 脚本，3 分钟从 0 到 2 nodes  
@@ -16,10 +16,10 @@
 ```mermaid
 mindmap
   root((Ray 集群))
-    Head(云机<tailscale ip>)
-    Worker1(旧机<tailscale ip>)
-    Worker2(树莓派<tailscale ip>)
-    Dev(笔记本<tailscale ip>)
+    Head(云机'<tailscale ip>')
+    Worker1(旧机'<tailscale ip>')
+    Worker2(树莓派'<tailscale ip>')
+    Dev(笔记本'<tailscale ip>')
 
 mindmap
   root((Ray集群怎么工作))
