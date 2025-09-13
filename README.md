@@ -16,7 +16,30 @@
 ```mermaid
 mindmap
   root((Ray 集群))
-    Head(云机&lt;br&gt;100.120.43.113)
-    Worker1(南平旧机&lt;br&gt;100.110.69.39)
-    Worker2(树莓派&lt;br&gt;100.x.x.x)
-    Dev(笔记本&lt;br&gt;100.75.40.95)
+    Head(云机<tailscale ip>)
+    Worker1(旧机<tailscale ip>)
+    Worker2(树莓派<tailscale ip>)
+    Dev(笔记本<tailscale ip>)
+
+mindmap
+  root((Ray集群怎么工作))
+    头节点
+      启动GCS(全局通讯录)
+      启动Dashboard(看面板)
+      启动Raylet(本地调度员)
+    工人节点
+      连GCS(报到)
+      启动Raylet(等活干)
+    Driver(你的Python)
+      ray.init(拿地址本)
+      提交任务(函数/类)
+      拿结果(像本地一样)
+    任务流程
+      函数变任务
+      GCS分给空闲Raylet
+      Raylet开Worker进程
+      结果写对象存储
+      Driver读结果
+    Tailscale内网
+      像一条宿舍网线
+      永不靠公网IP
